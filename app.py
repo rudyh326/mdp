@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	return jsonify("Hello World!")
+	return jsonify("Hello rudy")
 
 req_data=0
 @app.route('/data',methods=['POST'])
