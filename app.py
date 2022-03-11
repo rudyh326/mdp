@@ -6,12 +6,17 @@ app = Flask(__name__)
 def home():
 	return jsonify("Hello rudy")
 
-req_data=0
+##req_data=0
 @app.route('/data',methods=['POST'])
 def data_req():
-	global req_data
-	req_data = request.get_json()
-	return jsonify(req_data)
+##	global req_data
+##	req_data = request.get_json()
+##	return jsonify(req_data)
+        req = request.form["sample"]
+        resp = "Server received: " + req
+        json = {"textDetected": resp}
+
+        return json
 
 print(req_data)
 # @app.route('/data/<string:name>')
